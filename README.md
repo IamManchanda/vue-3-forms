@@ -1,6 +1,6 @@
 # vue-3-forms
 
-Master Vue 3 Forms at Vue Mastery. Create simpler and more powerful reusable forms with Vue 3.
+Learn and Master Vue 3 Forms at Vue Mastery. Create simpler and more powerful reusable forms with Vue 3.
 
 ## Project setup
 
