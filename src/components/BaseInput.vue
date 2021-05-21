@@ -1,13 +1,24 @@
 <template>
-  <label :for="uuid">{{ label }}</label>
+  <label :for="uuid" v-if="label">{{ label }}</label>
   <input
     class="field"
-    :placeholder="`Enter ${label}`"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    :class="error ? 'error' : null"
     v-bind="$attrs"
+    :value="modelValue"
+    :placeholder="label ? `Enter ${label}` : ''"
+    @input="$emit('update:modelValue', $event.target.value)"
     :id="uuid"
+    :aria-describedby="error ? `${uuid}-error` : null"
+    :aria-invalid="error ? true : null"
   />
+  <p
+    v-if="error"
+    class="errorMessage"
+    :id="`${uuid}-error`"
+    aria-live="assertive"
+  >
+    {{ error }}
+  </p>
 </template>
 
 <script>
@@ -22,6 +33,10 @@ export default {
     },
     modelValue: {
       type: [String, Number],
+      default: "",
+    },
+    error: {
+      type: String,
       default: "",
     },
   },

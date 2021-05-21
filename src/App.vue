@@ -172,6 +172,7 @@ select.error {
   margin-bottom: 0;
 }
 input + p.errorMessage {
+  margin-top: 0;
   margin-bottom: 24px;
 }
 textarea {
