@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import SimpleForm from '@/views/SimpleForm'
+import SimpleForm from "@/views/SimpleForm";
 
 export default {
-  components: { SimpleForm }
-}
+  components: { SimpleForm },
+};
 </script>
 
 <style>
